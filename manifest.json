@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "微信公众号文章爬取器",
+  "version": "1.0",
+  "description": "爬取微信公众号文章内容并保存到本地",
+  "permissions": ["activeTab", "scripting", "downloads"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://mp.weixin.qq.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
